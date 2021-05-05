@@ -1,12 +1,12 @@
 Feature: Shop on asian paints
 
-Scenario: User purchases wall stickers from Asianpaints 
+Scenario: User purchases wallpaper from Asianpaints 
 Given User is on homepage 
 When User logs in with mobile number and OTP
-And User navigates to shop 
-And User clicks on wallstickers
-And User clicks on size and selects large 
-And User Selects favourite wallstickers
+And User user navigates to shop 
+And User clicks on wallpapers
+And User clicks on colour 
+And User Selects favourite wallpapers
 And User enters pincode and clicks buy now
 And User selects address and clicks on continue 
 And User clicks on pay now 

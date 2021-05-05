@@ -9,10 +9,10 @@ public class ShopPOM
 {
 	
 	WebDriver driver;
-	@FindBy(xpath="//span[@class='spriteIcon-Aprevamp profileIcon']")
+	@FindBy(css=".profileIcon")
 	WebElement profile;
 	
-	@FindBy(xpath="//input[@id='loginMobile']")
+	@FindBy(id="loginMobile")
 	WebElement mobile;
 	
 	@FindBy(xpath="//button[@class='ctaText modal__variant-login--submit']")
@@ -24,7 +24,7 @@ public class ShopPOM
 	@FindBy(xpath="//button[@class='ctaText validate-login  modal__variant-login--submit']")
 	WebElement Submit1;
 	
-	@FindBy(xpath="//span[@class='iconTextLinks__text visible-in-Desktop'][normalize-space()='SHOP']")
+	@FindBy(xpath="//span[contains(@class,'iconTextLinks__text visible-in-Desktop')][normalize-space()='SHOP']")
 	WebElement shop;
 	
 	@FindBy(xpath="//a[@href='https://www.asianpaints.com/products/wall-coverings/wallpaper-collection.html']//span[@class='iconTextLinks__text'][normalize-space()='Wallpapers']")
@@ -65,6 +65,7 @@ public class ShopPOM
 	}
 	public void setMobile(String mob)
 	{
+		mobile.click();
 		mobile.sendKeys(mob);
 	}
 	public void clickSubmit()
