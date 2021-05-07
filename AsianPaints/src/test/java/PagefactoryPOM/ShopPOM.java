@@ -10,71 +10,84 @@ public class ShopPOM
 	
 	WebDriver driver;
 	@FindBy(css=".profileIcon")
-	WebElement profile;
+	WebElement clickprofileicon;
 	
 	@FindBy(id="loginMobile")
-	WebElement mobile;
+	WebElement clicklogin;
 	
-	@FindBy(xpath="//button[@class='ctaText modal__variant-login--submit']")
-	WebElement submit;
+	@FindBy(id="loginMobile")
+	WebElement enternumber;
 	
-	@FindBy(xpath="//input[@id='loginOtp']")
-	WebElement otp;
+	@FindBy(xpath="//*[@id=\"validate-mobile\"]/div[2]/button")
+	WebElement clicksubmit;
 	
-	@FindBy(xpath="//button[@class='ctaText validate-login  modal__variant-login--submit']")
-	WebElement Submit1;
+	@FindBy(xpath="//*[@id=\"loginOtp\"]")
+	WebElement enterotp;
+	
+	@FindBy(xpath="//*[@id=\"validate-otp\"]/div[3]/button")
+	WebElement Clickotpsubmit;
 	
 	@FindBy(xpath="//span[contains(@class,'iconTextLinks__text visible-in-Desktop')][normalize-space()='SHOP']")
 	WebElement shop;
 	
-	@FindBy(xpath="//a[@href='https://www.asianpaints.com/products/wall-coverings/wallpaper-collection.html']//span[@class='iconTextLinks__text'][normalize-space()='Wallpapers']")
+	@FindBy(xpath="//img[@title='ap-shop-wall-stickers-asian-paints']")
 	WebElement wallpaper;
 	
-	@FindBy(xpath="//legend[normalize-space()='colour']")
-	WebElement colour;
+	@FindBy(xpath="//span[normalize-space()='size']")
+	WebElement size;
 	
-	@FindBy(xpath="img[title='wallpaper-close-shot-asian-paints-W150Z430S75']")
+	@FindBy(xpath="//label[normalize-space()='large']")
+	WebElement large;
+	
+	@FindBy(xpath="//img[@title='Chasing Goals Football']")
 	WebElement wallsel;
 	
-	@FindBy(xpath="//input[@id='checkPincode']")
+	@FindBy(id="productPincode")
 	WebElement pincode;
 	
-	@FindBy(xpath="//a[normalize-space()='Buy now']")
+	@FindBy(id="checkout")
 	WebElement buy;
 	
-	@FindBy(css="a[class='global-button']")
+	@FindBy(xpath="//span[normalize-space()='Address']")
 	WebElement contin;
 	
-	@FindBy(css="a[class='global-button 1']")
+	@FindBy(xpath="//span[normalize-space()='Payment']")
 	WebElement contin1;
 	
-	@FindBy(css="div[id='payment-btn'] span:nth-child(1)")
+	@FindBy(xpath="//button[@class='global-button']//span[contains(text(),'Pay Now')]")
 	WebElement pay;
 	
-	//@FindBy(css="div[class='title-text']")
-	//WebElement paypage;
+	@FindBy(css="div[class='title-text']")
+	WebElement paypage;
 	
 	public ShopPOM(WebDriver driver)
 	{
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	public void clickProfile()
+	public void clickprofile()
 	{
-		profile.click();
+		clickprofileicon.click();
 	}
-	public void setMobile(String mob)
+	public void clickloginbtn()
 	{
-		mobile.click();
-		mobile.sendKeys(mob);
+		clicklogin.click();
 	}
-	public void clickSubmit()
+	public void enterno(String PN)
 	{
-		submit.click();
+		enternumber.sendKeys(PN);
 	}
-	public void Submit()
+	public void numbersubmit()
 	{
-		Submit1.click();
+		clicksubmit.click();
+	}
+	public void otpenter(String OTP)
+	{
+		enterotp.sendKeys(OTP);
+	}
+	public void otpsubmit()
+	{
+		Clickotpsubmit.click();
 	}
 	public void shop()
 	{
@@ -85,17 +98,21 @@ public class ShopPOM
     {
     	wallpaper.click();
     }
-    public void colour()
+    public void size()
     {
-    	colour.click();
+    	size.click();
     }
-    
+    public void large()
+    {
+    	large.click();
+    }
     public void wallsel()
     {
     	wallsel.click();
     }
     public void pincode(String pc)
     {
+    	pincode.click();
     	pincode.sendKeys(pc);
     }
     public void checkout()
@@ -113,6 +130,10 @@ public class ShopPOM
     public void payment()
     {
     	pay.click();
+    }
+    public boolean paypage()
+    {
+    	return paypage.isDisplayed();
     }
 
 }
