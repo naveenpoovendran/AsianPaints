@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pagefactorytest.shoppomtest">
+      <class name="stepDefinition.Shop">
         <methods>
-          <include name="testregister"/>
+          <include name="user_Should_see_Payment_page"/>
         </methods>
-      </class> <!-- pagefactorytest.shoppomtest -->
+      </class> <!-- stepDefinition.Shop -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -54,11 +54,27 @@ public class ShopPOM
 	@FindBy(xpath="//span[normalize-space()='Payment']")
 	WebElement contin1;
 	
-	@FindBy(xpath="//button[@class='global-button']//span[contains(text(),'Pay Now')]")
+	@FindBy(css="div[id='payment-btn'] span:nth-child(1)")
 	WebElement pay;
 	
-	@FindBy(css="div[class='title-text']")
+	@FindBy(xpath="//div[@class='title-text']")
 	WebElement paypage;
+	
+	
+	@FindBy(css=".profileIcon-active")
+	WebElement logincheck;
+	
+	@FindBy(xpath="//img[@title='Blue & Gold Macaws Wall Sticker']")
+	WebElement wallstickercheck;
+	
+	@FindBy(xpath="//img[@title='Chasing Goals Football']")
+	WebElement sizecheck;
+	
+	@FindBy(xpath="//h2[normalize-space()='Price Details']")
+	WebElement pincodecheck;
+	
+	@FindBy(xpath="//span[@class='productHeading']")
+	WebElement addresscheck;
 	
 	public ShopPOM(WebDriver driver)
 	{
@@ -134,6 +150,26 @@ public class ShopPOM
     public boolean paypage()
     {
     	return paypage.isDisplayed();
+    }
+    public boolean logincheck()
+    {
+    	return logincheck.isDisplayed();
+    }
+    public boolean wallstickercheck()
+    {
+    	return wallstickercheck.isDisplayed();
+    }
+    public boolean sizecheck()
+    {
+    	return sizecheck.isDisplayed();
+    }
+    public boolean pincodecheck()
+    {
+    	return pincodecheck.isDisplayed();
+    }
+    public boolean addresscheck()
+    {
+    	return addresscheck.isDisplayed();
     }
 
 }

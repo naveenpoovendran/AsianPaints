@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -55,7 +56,8 @@ System.setProperty("webdriver.chrome.driver","C:\\Users\\pnaveen3\\eclipse\\java
 		Thread.sleep(30000);
 		ap.otpsubmit();
 		Thread.sleep(3000);
-	  assert driver.findElement(By.cssSelector(".profileIcon-active")).isDisplayed();
+		boolean view=ap.logincheck();
+		Assert.assertTrue(view);
 	  Thread.sleep(3000);
 	}
  
@@ -68,7 +70,7 @@ ShopPOM ap = PageFactory.initElements(driver, ShopPOM.class);
 Thread.sleep(4000);
 		ap.shop();
 		Thread.sleep(3000);
-		//assert driver.findElement(By.xpath("//img[@title='ap-shop-wall-stickers-asian-paints']")).isDisplayed();
+		
 }
  
  @Test(priority=3)
@@ -79,7 +81,8 @@ public void user_clicks_on_wallsticker() throws Throwable
 	Thread.sleep(3000);
 	ap.wallpaper();
 	Thread.sleep(3000);
-	assert driver.findElement(By.xpath("//img[@title='Blue & Gold Macaws Wall Sticker']")).isDisplayed();
+	boolean view1=ap.wallstickercheck();
+	Assert.assertTrue(view1);
 }
  
  @Test(priority=4)
@@ -91,7 +94,8 @@ public void user_clicks_on_size() throws Throwable
 	ap.size();
 	Thread.sleep(3000);
 	ap.large();
-	assert driver.findElement(By.xpath("//img[@title='Chasing Goals Football']")).isDisplayed();
+	boolean view2=ap.sizecheck();
+	Assert.assertTrue(view2);
 }
  
  @Test(priority=5)
@@ -117,7 +121,7 @@ public void user_Selects_favourite_wallsticker() throws Throwable
              
                 // Switching to Child window
                 driver.switchTo().window(ChildWindow);
-	//assert driver.findElement(By.xpath("//label[normalize-space()='Check Delivery']")).isDisplayed();
+	
 }}}
  
  @Test(priority=6)
@@ -129,7 +133,8 @@ public void user_enters_pincode_and_clicks_buy_now() throws Throwable
 	ap.pincode("110092");
 	Thread.sleep(3000);
 	ap.checkout();
-	assert driver.findElement(By.xpath("//h2[normalize-space()='Price Details']")).isDisplayed();
+	boolean view3=ap.pincodecheck();
+	Assert.assertTrue(view3);
 }
     
  @Test(priority=7)
@@ -142,7 +147,8 @@ public void user_selects_address_and_clicks_on_continue() throws Throwable
 	ap.cart();
 	
 	Thread.sleep(3000);
-	assert driver.findElement(By.xpath("//span[@class='productHeading']")).isDisplayed();
+	boolean view4=ap.addresscheck();
+	Assert.assertTrue(view4);
 }
  @Test(priority=8)
 @When("^User clicks on pay now$")
@@ -163,7 +169,8 @@ public void user_Should_see_Payment_page() throws Throwable
 	
 	ap.payment();
 	Thread.sleep(3000);
-	assert driver.findElement(By.xpath("//div[@class='title-text']")).isDisplayed();
+	boolean view5=ap.paypage();
+	Assert.assertTrue(view5);
 }
     
 
