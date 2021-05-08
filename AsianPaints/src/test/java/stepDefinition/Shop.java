@@ -72,8 +72,8 @@ Thread.sleep(4000);
 }
  
  @Test(priority=3)
-@When("^User clicks on wallpapers$")
-public void user_clicks_on_wallpapers() throws Throwable 
+@When("^User clicks on wallsticker$")
+public void user_clicks_on_wallsticker() throws Throwable 
 {
 	ShopPOM ap = PageFactory.initElements(driver, ShopPOM.class);
 	Thread.sleep(3000);
@@ -83,8 +83,8 @@ public void user_clicks_on_wallpapers() throws Throwable
 }
  
  @Test(priority=4)
-@When("^User clicks on colour$")
-public void user_clicks_on_colour() throws Throwable 
+@When("^User clicks on size$")
+public void user_clicks_on_size() throws Throwable 
 {
 	ShopPOM ap = PageFactory.initElements(driver, ShopPOM.class);
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -95,8 +95,8 @@ public void user_clicks_on_colour() throws Throwable
 }
  
  @Test(priority=5)
-@When("^User Selects favourite wallpapers$")
-public void user_Selects_favourite_wallpapers() throws Throwable 
+@When("^User Selects favourite wallsticker$")
+public void user_Selects_favourite_wallsticker() throws Throwable 
 {
 	ShopPOM ap = PageFactory.initElements(driver, ShopPOM.class);
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
