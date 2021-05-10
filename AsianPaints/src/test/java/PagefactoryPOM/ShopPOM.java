@@ -76,6 +76,12 @@ public class ShopPOM
 	@FindBy(xpath="//span[@class='productHeading']")
 	WebElement addresscheck;
 	
+	@FindBy(xpath="//button[@class='ctaText i-understand-btn text-uppercase']")
+	WebElement understand;
+	
+	@FindBy(xpath="//div[@id='checkOutTab-3']//div//span[contains(text(),'Amount Payable')]")
+	WebElement paypagecheck;
+	
 	public ShopPOM(WebDriver driver)
 	{
 		this.driver=driver;
@@ -147,6 +153,10 @@ public class ShopPOM
     {
     	pay.click();
     }
+    public void understand()
+    {
+    	understand.click();
+    }
     public boolean paypage()
     {
     	return paypage.isDisplayed();
@@ -170,6 +180,10 @@ public class ShopPOM
     public boolean addresscheck()
     {
     	return addresscheck.isDisplayed();
+    }
+    public boolean paypagecheck()
+    {
+    	return paypagecheck.isDisplayed();
     }
 
 }

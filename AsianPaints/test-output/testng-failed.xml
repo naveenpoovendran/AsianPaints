@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="stepDefinition.Shop">
+      <class name="runner.testRunner">
         <methods>
-          <include name="user_Should_see_Payment_page"/>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="1"/>
+          <include name="tearDownClass"/>
         </methods>
-      </class> <!-- stepDefinition.Shop -->
+      </class> <!-- runner.testRunner -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
