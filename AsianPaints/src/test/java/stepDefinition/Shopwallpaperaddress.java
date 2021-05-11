@@ -12,6 +12,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
+import com.sun.org.apache.xalan.internal.xsltc.compiler.Pattern;
+
 import PagefactoryPOM.ShopPOM;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -134,7 +136,15 @@ public class Shopwallpaperaddress
 	ShopPOM ap = PageFactory.initElements(driver, ShopPOM.class);
 	Thread.sleep(2000);
 	driver.findElement(By.id("fname")).sendKeys(Name);
-	//driver.findElement(By.xpath("//label[normalize-space()='Full Name*']")).sendKeys("naveen");
+	if (Name.length() <= 10) {
+		Pattern p = Pattern.compile("^[a-zA-Z\\s]*$");
+		Matcher m = p.matcher(Name);
+		Name = m.matches();
+		System.out.println("FirstName Less than 10 and matcher : " + Name);
+	} else {
+		System.out.println("FirstName characters more than 10 " + Name);
+	}
+	
 	Thread.sleep(2000);
 	driver.findElement(By.id("mobile")).sendKeys("9958515619");
 	Thread.sleep(2000);
@@ -163,6 +173,7 @@ public class Shopwallpaperaddress
 	{
 		 driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
 		    assertTrue(driver.getTitle().contains("address"));
+		    driver.quit();
 	}
 
 	

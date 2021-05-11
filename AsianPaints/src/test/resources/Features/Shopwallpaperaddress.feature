@@ -16,6 +16,6 @@ Then user should not able to save it
 
 Examples:
 |Name     |Mobile    |Pincode     |Flat       |Street     |Landmark       |City       |    
-|naveen   |9958515619|110092      |123        |abc        |cde            |delhi      |     #saves same address
-|naveen   |9958515619|110092      |123        |abc        |cde            |delhi      |     #saves same address
-|123      |9958515619|110092      |12345678911|12345678911|12345678911    |12345678911|     #adds invalid data
+#|naveen   |9958515619|110092      |123        |abc        |cde            |delhi      |     #saves same address
+#|naveen   |9958515619|110092      |123        |abc        |cde            |delhi      |     #saves same address
+|123@$      |9958515619|110092      |12345678911|12345678911|12345678911    |12345678911|     #adds invalid data
