@@ -33,6 +33,9 @@ public class ShopPOM
 	@FindBy(xpath="//img[@title='ap-shop-wall-stickers-asian-paints']")
 	WebElement wallpaper;
 	
+	@FindBy(xpath="//a[@href='https://www.asianpaints.com/products/wall-coverings/wallpaper-collection.html']//span[@class='iconTextLinks__text'][normalize-space()='Wallpapers']")
+	WebElement wall;
+	
 	@FindBy(xpath="//span[normalize-space()='size']")
 	WebElement size;
 	
@@ -81,6 +84,34 @@ public class ShopPOM
 	
 	@FindBy(xpath="//div[@id='checkOutTab-3']//div//span[contains(text(),'Amount Payable')]")
 	WebElement paypagecheck;
+	
+	@FindBy(xpath="//a[normalize-space()='Add a New Address']")
+	WebElement addaddress;
+	
+	@FindBy(id="fname")
+	WebElement Fname;
+	
+	@FindBy(id="mobile")
+	WebElement mobile;
+	
+	@FindBy(id="pin")
+	WebElement pin;
+	
+	@FindBy(id="landmark")
+	WebElement landmark;
+	
+	@FindBy(id="city")
+	WebElement city;
+	
+	@FindBy(id="address1")
+	WebElement address1;
+	
+	@FindBy(id="address2")
+	WebElement address2;
+	
+	@FindBy(xpath="//button[normalize-space()='Save Address']")
+	WebElement saveaddress;
+	
 	
 	public ShopPOM(WebDriver driver)
 	{
@@ -132,6 +163,11 @@ public class ShopPOM
     {
     	wallsel.click();
     }
+    public void wall()
+    {
+    	wall.click();
+    }
+    
     public void pincode(String pc)
     {
     	pincode.click();
@@ -156,6 +192,10 @@ public class ShopPOM
     public void understand()
     {
     	understand.click();
+    }
+    public void addaddress()
+    {
+    	addaddress.click();
     }
     public boolean paypage()
     {
@@ -184,6 +224,38 @@ public class ShopPOM
     public boolean paypagecheck()
     {
     	return paypagecheck.isDisplayed();
+    }
+    public void fname()
+    {
+    	Fname.click();
+    }
+    public void mobile()
+    {
+    	mobile.click();
+    }
+    public void pincode()
+    {
+    	pin.click();
+    }
+    public void flat()
+    {
+    	address1.click();
+    }
+    public void street()
+    {
+    	address2.click();
+    }
+    public void landmark()
+    {
+    	landmark.click();
+    }
+    public void city()
+    {
+    	city.click();
+    }
+    public void saveaddress()
+    {
+    	saveaddress.click();
     }
 
 }

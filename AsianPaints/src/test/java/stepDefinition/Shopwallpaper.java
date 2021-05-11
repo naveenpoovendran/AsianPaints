@@ -82,6 +82,9 @@ public class Shopwallpaper
 	{
 	    
 	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	    ShopPOM as = PageFactory.initElements(driver, ShopPOM.class);
+	    as.wall();
+        Thread.sleep(2000);
 	    String actualTitle = driver.getTitle();
 	    String expectedTitle = "Range of Nilaya House Wallpaper Collections - Asian Paints";
 	    assertEquals(expectedTitle,actualTitle);
