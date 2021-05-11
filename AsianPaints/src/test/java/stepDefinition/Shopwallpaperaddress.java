@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
 
 import PagefactoryPOM.ShopPOM;
 import cucumber.api.java.en.Given;
@@ -19,6 +20,7 @@ import cucumber.api.java.en.When;
 public class Shopwallpaperaddress 
 {
 	WebDriver driver;
+	@Test(priority=1)
 	@Given("^User is on AP homepage$")
 	public void user_is_on_AP_homepage() throws Throwable 
 	{
@@ -30,7 +32,7 @@ public class Shopwallpaperaddress
 	    driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
 	    
 	}
-
+	@Test(priority=2)
 	@When("^User logs in with contact number and OTP$")
 	public void user_logs_in_with_contact_number_and_OTP() throws Throwable 
 	{
@@ -46,7 +48,7 @@ public class Shopwallpaperaddress
 			Thread.sleep(3000);
 	    
 	}
-
+	@Test(priority=3)
 	@When("^User selects shop$")
 	public void user_selects_shop() throws Throwable 
 	{
@@ -55,7 +57,7 @@ public class Shopwallpaperaddress
 		ap.shop();
 	    
 	}
-
+	@Test(priority=4)
 	@When("^User clicks on wallsticker in shop$")
 	public void user_clicks_on_wallsticker_in_shop() throws Throwable 
 	{
@@ -64,7 +66,7 @@ public class Shopwallpaperaddress
 		ap.wallpaper();
 		Thread.sleep(3000);	  
 	}
-
+	@Test(priority=5)
 	@When("^User selects size$")
 	public void user_selects_size() throws Throwable 
 	{
@@ -75,7 +77,7 @@ public class Shopwallpaperaddress
 		ap.large();
 	    
 	}
-
+	@Test(priority=6)
 	@When("^User clicks favourite wallsticker$")
 	public void user_clicks_favourite_wallsticker() throws Throwable 
 	{
@@ -103,7 +105,7 @@ public class Shopwallpaperaddress
 	    }
 	   
 	}
-
+	@Test(priority=7)
 	@When("^User input pincode and clicks buy now$")
 	public void user_input_pincode_and_clicks_buy_now() throws Throwable 
 	{
@@ -114,7 +116,7 @@ public class Shopwallpaperaddress
 		ap.checkout();
 	  
 	}
-
+	@Test(priority=8)
 	@When("^User selects address and adds address$")
 	public void user_selects_address_and_adds_address() throws Throwable 
 	{
@@ -125,8 +127,8 @@ public class Shopwallpaperaddress
 		ap.addaddress();
 	   
 	}
-
-@When("^User enters same ([^\\\"]*) and ([^\\\"]*) and ([^\\\"]*) and ([^\\\"]*) and ([^\\\"]*) and ([^\\\"]*) and ([^\\\"]*)$")
+	@Test(priority=9)
+    @When("^User enters same ([^\\\"]*) and ([^\\\"]*) and ([^\\\"]*) and ([^\\\"]*) and ([^\\\"]*) and ([^\\\"]*) and ([^\\\"]*)$")
 	public void user_enters_same_Name_and_Mobile_and_Pincode_and_Flat_and_Street_and_Landmark_and_City(String Name, String Mobile, String Pincode, String Flat, String Street, String Landmark, String City) throws Throwable 
 	{
 	ShopPOM ap = PageFactory.initElements(driver, ShopPOM.class);
@@ -145,8 +147,8 @@ public class Shopwallpaperaddress
 	driver.findElement(By.id("city")).sendKeys(City);
 	    
 	}
-
-@When("^User clicks on save address$")
+	@Test(priority=10)
+    @When("^User clicks on save address$")
 	public void user_clicks_on_save_address() throws Throwable 
 	{
 	  ShopPOM ap = PageFactory.initElements(driver, ShopPOM.class);
@@ -155,7 +157,7 @@ public class Shopwallpaperaddress
 		//ap.saveaddress();
 		Thread.sleep(2000);
 	}
-
+	@Test(priority=11)
 	@Then("^user should not able to save it$")
 	public void user_should_not_able_to_save_it() throws Throwable 
 	{
